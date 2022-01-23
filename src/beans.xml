@@ -7,4 +7,10 @@
 <bean id= "sim" class="com.spring.core.IOC.Vodafone"> </bean>
 <bean id= "sim1" class="com.spring.core.IOC.Airtel"> </bean>
 
+<!--example of setter injection-->
+
+<bean id = "student" class = "di.Student">
+	<property name ="Name" value="Aarthi" />
+	<property name ="id" value ="1001"/>
+</bean>
 </beans>
