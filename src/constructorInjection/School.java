@@ -1,11 +1,11 @@
-package di;
+package constructorInjection;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class School {
 	
-	/*		                             SETTER INJECTION
+	/*						CONSTRUCTOR INJECTION
 	Student s = new Student();
 	s.displayInfo();
 
@@ -29,7 +29,7 @@ eg:
 		
 		}
 		
-the above variables cannot be directly accessed , they need to be called via getters and setters. This example is for Setter Injection
+the above variables cannot be directly accessed , they need to be called via getters and setters.
 
 */	
 	
@@ -39,7 +39,7 @@ the above variables cannot be directly accessed , they need to be called via get
 		
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-		Student stud1 = applicationContext.getBean("student", Student.class);
+		Student stud1 = applicationContext.getBean("student-cons", Student.class);
 		stud1.displayInfo();
 		
 		

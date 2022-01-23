@@ -13,4 +13,10 @@
 	<property name ="Name" value="Aarthi" />
 	<property name ="id" value ="1001"/>
 </bean>
+
+<!-- example of constructor injection -->
+<bean id = "student-cons" class="constructorInjection.Student">
+<constructor-arg name="Name" value="Abilash"/>
+<constructor-arg name="id" value="1002"/>
+</bean>
 </beans>
