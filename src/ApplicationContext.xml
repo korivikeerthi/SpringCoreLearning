@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+     <!--this is one way of creating beans , but it is not the preferred way , cuz u end up creating two objects for the same class
+     Subject.Materials
+     --> 
+     
+  <!--<bean id ="stud1" class = " dependencyInjection.objectReference.Student">
+     <property name="materials">
+     	<bean id="1001" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     </property>
+     </bean>
+      <bean id ="Teacher1" class = "dependencyInjection.objectReference.Teacher">
+     <property name="materials">
+     	<bean id="T001" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     </property>
+     </bean>-->
+     
+     
+     <bean id = "studMaterials" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     
+     <bean id ="stud1" class = " dependencyInjection.objectReference.Student">
+     <property name="materials" ref="studMaterials"/>
+     </bean>
+     
+       
+     <bean id ="Teach1" class = "dependencyInjection.objectReference.Teacher">
+     <property name="materials" ref="studMaterials"/>
+     </bean>
+    
+        
+</beans>
