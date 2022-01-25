@@ -19,7 +19,8 @@
      </property>
      </bean>-->
      
-     
+     <!-- In the below method you are separating the class and putting that in a separate bean and then making use of a reference of it.In this way
+      only one object is created and the other beans will be referred to it. -->
      <bean id = "studMaterials" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
      
      <bean id ="stud1" class = " dependencyInjection.objectReference.Student">
