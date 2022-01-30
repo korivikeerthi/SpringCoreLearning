@@ -10,14 +10,32 @@
      
   <!--<bean id ="stud1" class = " dependencyInjection.objectReference.Student">
      <property name="materials">
-     	<bean id="1001" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     	<bean class="dependencyInjection.objectReference.SubjectMaterials"></bean>
      </property>
      </bean>
       <bean id ="Teacher1" class = "dependencyInjection.objectReference.Teacher">
      <property name="materials">
-     	<bean id="T001" class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     	<bean class="dependencyInjection.objectReference.SubjectMaterials"></bean>
      </property>
-     </bean>-->
+     </bean>
+	 
+	 Internally what is happening ? for a bean normally
+	 <bean id ="stud1" class = " dependencyInjection.objectReference.Student">
+     <property name="materials">
+     	<bean class="dependencyInjection.objectReference.SubjectMaterials"></bean>
+     </property>
+     </bean>
+	 
+	 we are creating an object of class Student , then we r creating an object for SubjectMaterials , and then we r passing
+	 the reference of SubjectMaterials class to the Student class's method which is setMaterials. Now the Student class
+	 gets an object and the variable of it also gets an object, so the dependency injection is done successfully
+	 
+	 Student stud1 = new Student();
+	 SubjectMaterials materials = new SubjectMaterials();
+	 stud1.setMaterials(materials);
+	 
+	 
+	 -->
      
      <!-- In the below method you are separating the class and putting that in a separate bean and then making use of a reference of it.In this way
       only one object is created and the other beans will be referred to it. -->

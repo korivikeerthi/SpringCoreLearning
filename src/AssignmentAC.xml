@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="MissedCallservice" class="assignment1.MissedCallAlertService"></bean>
+        <bean id="Dataservice" class="assignment1.DataService"></bean>
+        <bean id="CallerService" class="assignment1.CallerService"></bean>
+        
+        <bean id="serviceprovider" class="assignment1.Airtel">
+        	<property name="service" ref="Dataservice"></property>
+        </bean>
+        
+        
+        
+        <!-- What is done in the above bean definitions
+        
+        we will start from line 11, so here we are creating an object of class Airtel.
+        
+        Airtel serviceprovider = new Airtel();
+        
+        now line 12 , it is taking a reference , switch to line 8 . There another bean is defined of class DataService
+        
+        DataService Dataservice = new DataService();
+        
+        line 12,
+        Inside the Airtel class a Property is defined so ,
+        
+        Airtel serviceprovider = new Airtel();
+        DataService Dataservice = new DataService();
+        serviceprovider.setService(Dataservice); 
+        
+        In the last step we are passing the reference of DataService class to the Airtel class's method setService();
+        
+        here we are injecting the reference via a setter method.
+        
+         -->
+        
+</beans>
